@@ -13,10 +13,9 @@ function App() {
         <ThemeProvider theme={theme}>
             <div>
                 <CssBaseline />
-
-                <Header />
-
                 <Router>
+                    <Header />
+
                     <Main />
                 </Router>
             </div>

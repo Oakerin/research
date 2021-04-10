@@ -12,6 +12,9 @@ const dataSet_1 = {
     8: { name: '', src: mermaidSrc, checked: false },
 };
 
+/**
+ * clickable - чтобы найти спанчбоба на второй странице
+ */
 const dataSet_2 = {
     1: { name: '', src: mermaidSrc, checked: false },
     2: { name: '', src: mermaidSrc, checked: false },
