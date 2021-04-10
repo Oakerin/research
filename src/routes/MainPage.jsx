@@ -1,7 +1,7 @@
 import React from 'react';
 import Typography from '@material-ui/core/Typography';
 import makeStyles from '@material-ui/styles/makeStyles';
-import
+import bobImg from '../assets/imgs/bob.png';
 
 const useStyles = makeStyles({
     root: {
