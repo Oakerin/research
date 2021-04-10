@@ -83,7 +83,7 @@ export const CartoonsPage = () => {
 
     const handleFinish = () => {
         console.log(cartoons); // Push to firebase
-        history.push('finish');
+        history.push('/finish');
     };
 
     return (
