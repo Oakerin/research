@@ -13,7 +13,7 @@ function App() {
         <ThemeProvider theme={theme}>
             <div>
                 <CssBaseline />
-                <Router>
+                <Router basename="research">
                     <Header />
 
                     <Main />

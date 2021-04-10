@@ -1,6 +1,6 @@
 import React from 'react';
 import Container from '@material-ui/core/Container';
-import { Route, Switch } from 'react-router-dom';
+import { Route, Switch, Redirect } from 'react-router-dom';
 import MainPage from '../routes/MainPage';
 import makeStyles from '@material-ui/styles/makeStyles';
 import { CartoonsPage } from '../routes/CartoonsPage';
@@ -20,6 +20,9 @@ export function Main() {
             {/* A <Switch> looks through its children <Route>s and renders the first one that matches the current URL. */}
             <Switch>
                 <Route exact path="/">
+                    <Redirect to="/main" />
+                </Route>
+                <Route path="/main">
                     <MainPage />
                 </Route>
                 <Route path="/cartoons/:id">
