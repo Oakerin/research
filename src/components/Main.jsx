@@ -4,6 +4,7 @@ import { Route, Switch } from 'react-router-dom';
 import MainPage from '../routes/MainPage';
 import makeStyles from '@material-ui/styles/makeStyles';
 import { CartoonsPage } from '../routes/CartoonsPage';
+import { FinishPage } from '../routes/FinishPage';
 
 const useStyles = makeStyles({
     root: {
@@ -23,6 +24,9 @@ export function Main() {
                 </Route>
                 <Route path="/cartoons/:id">
                     <CartoonsPage />
+                </Route>
+                <Route path="/finish">
+                    <FinishPage />
                 </Route>
             </Switch>
         </Container>
