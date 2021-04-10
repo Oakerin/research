@@ -1,14 +1,29 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { getCartoons } from '../utils/cartoons';
 import GridList from '@material-ui/core/GridList';
 import GridListTile from '@material-ui/core/GridListTile';
 import GridListTileBar from '@material-ui/core/GridListTileBar';
-import IconButton from '@material-ui/core/IconButton';
-import InfoIcon from '@material-ui/icons/Info';
 import makeStyles from '@material-ui/styles/makeStyles';
 import Button from '@material-ui/core/Button';
+import { useParams, useHistory, Link } from 'react-router-dom';
+import Checkbox from '@material-ui/core/Checkbox';
+import { withStyles } from '@material-ui/core/styles';
+import { green } from '@material-ui/core/colors';
+import Dialog from '@material-ui/core/Dialog';
+import Slide from '@material-ui/core/Slide';
+import Typography from '@material-ui/core/Typography';
 
-const useStyles = makeStyles((theme) => ({
+const GreenCheckbox = withStyles({
+    root: {
+        color: green[400],
+        '&$checked': {
+            color: green[600],
+        },
+    },
+    checked: {},
+})((props) => <Checkbox color="default" {...props} />);
+
+const useStyles = makeStyles({
     root: {
         display: 'flex',
         flexDirection: 'column',
@@ -28,37 +43,117 @@ const useStyles = makeStyles((theme) => ({
     },
     buttonNext: {
         marginTop: 32
+    },
+    img: {
+        cursor: 'pointer'
     }
-}));
+});
 
-export function CartoonsPage() {
+const Transition = React.forwardRef(function Transition(props, ref) {
+    return <Slide direction="up" ref={ref} {...props} />;
+});
+
+export const CartoonsPage = () => {
+    const history = useHistory();
     const classes = useStyles();
-    const cartoons = getCartoons(1);
+    const { id } = useParams();
+    const [cartoons, setCartoons] = useState(getCartoons(id));
+    const [open, setOpen] = useState(false);
+
+    useEffect(() => {
+        setCartoons(getCartoons(id));
+    }, [id]);
+
+    const handleImgClick = (val) => () => {
+        if (val.clickable) {
+            setOpen(true);
+
+            setTimeout(() => {
+                setOpen(false);
+                history.push('/cartoons/' + (+id+1));
+            }, 500);
+        }
+
+        if (id === '3') {
+            let newCartoons = [ ...cartoons ];
+            newCartoons[val.id-1].checked = !newCartoons[val.id-1].checked;
+            setCartoons(newCartoons);
+        }
+    };
+
+    const handleFinish = () => {
+        console.log(cartoons);
+    };
 
     return (
-        <div>
+        <div className={classes.root}>
             <div className={classes.grid}>
-                <GridList cellHeight="auto" cols={4} spacing={46}>
+                {id === '3'
+                    ? (
+                        <>
+                            <Typography variant="h5" gutterBottom>Выберите картинки, которые изменились и потом нажмите кнопку ЗАКОНЧИТЬ!</Typography>
+                        </>
+                    )
+                    : (
+                        <>
+                            <Typography variant="h2">Найдите Спанч Боба и нажмите на него!</Typography>
+                            <Typography variant="body1" gutterBottom>Если его тут нет, нажмите кнопку ДАЛЕЕ</Typography>
+                        </>
+                    )
+                }
+                <GridList cellHeight={354} cols={4} spacing={46}>
                     {cartoons.map((cartoon) => (
-                        <GridListTile key={cartoon.id}>
-                            <img src={cartoon.src} alt={cartoon.name} />
-                            <GridListTileBar
-                                className={classes.bar}
-                                title={cartoon.title}
-                                subtitle={<span>by: {cartoon.name}</span>}
-                                actionIcon={
-                                    <IconButton className={classes.icon}>
-                                        <InfoIcon />
-                                    </IconButton>
-                                }
-                            />
+                        <GridListTile key={cartoon.id} onClick={handleImgClick(cartoon)}>
+                            <img className={classes.img} src={cartoon.src} alt={cartoon.name} />
+                            {id === '3' && (
+                                <GridListTileBar
+                                    actionIcon={
+                                        <GreenCheckbox
+                                            className={classes.checkBox}
+                                            color="secondary"
+                                            checked={cartoon.checked}
+                                            inputProps={{ 'aria-label': 'primary checkbox' }}
+                                        />
+                                    }
+                                />
+                            )}
                         </GridListTile>
                     ))}
                 </GridList>
             </div>
             <div>
-                <Button className={classes.buttonNext} color="primary" variant="contained">Далее</Button>
+                {id === '3'
+                    ? (
+                        <Button
+                            onClick={handleFinish}
+                            className={classes.buttonNext}
+                            color="primary"
+                            variant="contained"
+                        >
+                            Закончить
+                        </Button>
+                    )
+                    : (
+                        <Button
+                            disabled={id > 1}
+                            className={classes.buttonNext}
+                            color="primary"
+                            variant="contained"
+                            component={Link}
+                            to={'/cartoons/' + (+id+1)}
+                        >
+                            Далее
+                        </Button>
+                    )
+                }
             </div>
+
+            <Dialog fullScreen open={open} TransitionComponent={Transition}>
+                <div style={{ textAlign: 'center' }}>
+                    <Typography variant="h1">Поздравляю!</Typography>
+                    <Typography variant="h2">Вы нашли Спанч Боба!</Typography>
+                </div>
+            </Dialog>
         </div>
     );
-}
+};

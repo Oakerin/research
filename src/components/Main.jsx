@@ -21,7 +21,7 @@ export function Main() {
                 <Route exact path="/">
                     <MainPage />
                 </Route>
-                <Route path="/cartoons">
+                <Route path="/cartoons/:id">
                     <CartoonsPage />
                 </Route>
             </Switch>

@@ -29,7 +29,7 @@ function MainPage() {
                 </Typography>
                 <br />
                 <Typography align={'left'}>
-                    Нажми <Button component={Link} to="cartoons" variant="outlined">Начать</Button> если готов!
+                    Нажми <Button component={Link} to="cartoons/1" variant="outlined">Начать</Button> если готов!
                 </Typography>
             </div>
             <img src={bobImg} alt="Spange Bob" />
