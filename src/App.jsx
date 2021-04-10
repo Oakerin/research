@@ -11,20 +11,10 @@ function App() {
             <CssBaseline />
 
             <header>
+
             </header>
 
             <Router>
-                {/*<nav>*/}
-                {/*  <ul>*/}
-                {/*    <li>*/}
-                {/*      <Link to="/">Home</Link>*/}
-                {/*    </li>*/}
-                {/*    <li>*/}
-                {/*      <Link to="/foo">Foo</Link>*/}
-                {/*    </li>*/}
-                {/*  </ul>*/}
-                {/*</nav>*/}
-
                 <Container maxWidth="lg">
                     {/* A <Switch> looks through its children <Route>s and
                     renders the first one that matches the current URL. */}
