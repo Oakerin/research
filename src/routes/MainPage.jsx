@@ -19,17 +19,20 @@ function MainPage() {
     return (
         <div className={classes.root}>
             <div>
-                <Typography align={'left'}>
+                <Typography align={'left'} variant="h4" gutterBottom component="h1">
                     Привет, дорогой друг! <br/>
+                </Typography>
+                <Typography align={'left'} variant="body1">
                     Спасибо, что согласился принять участие в нашем исследовании. <br />
-                    Тебе будет предложено найти постер одного очень известного мультфильма: Губка Боб.<br />
+                    Тебе будет предложено найти постер одного <br/>
+                    очень известного мультфильма: Губка Боб.
                 </Typography>
                 <br />
                 <Typography align={'left'}>
-                    Нажми <Link to="foo" component={Button} variant="outlined">Начать</Link> если готов!
+                    Нажми <Button component={Link} to="cartoons" variant="outlined">Начать</Button> если готов!
                 </Typography>
             </div>
-            <img src={bobImg} />
+            <img src={bobImg} alt="Spange Bob" />
         </div>
     );
 }

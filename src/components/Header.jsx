@@ -29,9 +29,9 @@ export function Header() {
                     <MenuIcon />
                 </IconButton>
                 <Typography variant="h6" className={classes.title}>
-                    News
+                    Мультфильмы
                 </Typography>
-                <Button color="inherit">Login</Button>
+                <Button color="inherit">Войти</Button>
             </Toolbar>
         </AppBar>
     );
