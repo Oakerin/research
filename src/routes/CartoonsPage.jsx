@@ -114,8 +114,9 @@ export const CartoonsPage = () => {
                     )
                     : (
                         <>
-                            <Typography variant="h2">Найдите Спанч Боба и нажмите на него!</Typography>
-                            <Typography variant="body1" gutterBottom>Если его тут нет, нажмите кнопку ДАЛЕЕ</Typography>
+                            <Typography variant="h5" style={{ marginBottom: 32 }}>
+                                Найдите Спанч Боба и нажмите на него! <br/> Если его тут нет, нажмите кнопку ДАЛЕЕ.
+                            </Typography>
                         </>
                     )
                 }
