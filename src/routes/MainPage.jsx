@@ -1,7 +1,7 @@
 import React from 'react';
 import Typography from '@material-ui/core/Typography';
 import makeStyles from '@material-ui/styles/makeStyles';
-import bobImg from '../assets/imgs/bob.png';
+import rapunzelSrc from '../assets/imgs/rapunzel_main.png';
 import { Link } from 'react-router-dom';
 import Button from '@material-ui/core/Button';
 import { DateTime } from 'luxon';
@@ -37,7 +37,7 @@ function MainPage() {
                     Нажми <Button component={Link} to="cartoons/1" variant="outlined" onClick={handleClick}>Начать</Button> если готов!
                 </Typography>
             </div>
-            <img src={bobImg} alt="Spange Bob" />
+            <img src={rapunzelSrc} alt="rapunzel" width={650} height={640} />
         </div>
     );
 }
