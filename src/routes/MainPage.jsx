@@ -24,16 +24,16 @@ function MainPage() {
     return (
         <div className={classes.root}>
             <div>
-                <Typography align={'left'} variant="h4" gutterBottom component="h1">
+                <Typography align={'left'} variant="h3" gutterBottom component="h1">
                     Привет! <br/>
                 </Typography>
-                <Typography align={'left'} variant="body1">
+                <Typography style={{ fontWeight: 300 }} align={'left'} variant="h4" component="p">
                     Спасибо, что согласился принять участие в исследовании. <br />
                     Оно займет всего 10 минут. <br/>
                     Твоя задача — найти изображение с Рапунцель.
                 </Typography>
                 <br />
-                <Typography align={'left'}>
+                <Typography align={'left'} variant="h4" component="p">
                     Нажми <Button component={Link} to="cartoons/1" variant="outlined" onClick={handleClick}>Начать</Button> если готов!
                 </Typography>
             </div>
