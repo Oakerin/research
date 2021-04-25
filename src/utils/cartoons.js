@@ -8,7 +8,6 @@ import ralf from '../assets/imgs/ralf.jpg';
 import tort from '../assets/imgs/tort.jpg';
 import up from '../assets/imgs/up.jpg';
 
-
 // 2
 import spongeSrc from '../assets/imgs/p_sponge.png';
 import boss from '../assets/imgs/boss.jpg';
@@ -19,6 +18,13 @@ import curse from '../assets/imgs/curse.jpg';
 import rapunzel from '../assets/imgs/rapunzel.jpg';
 import soul from '../assets/imgs/soul.jpg';
 
+// 3
+import bossExtra from '../assets/imgs/boss+.jpg';
+import chipmunksExtra from '../assets/imgs/chipmunks+.jpg';
+import curseExtra from '../assets/imgs/curse+.jpg';
+import soulExtra from '../assets/imgs/soul+.jpg';
+
+
 const dataSet_1 = {
     1: { name: 'everest', src: everest, checked: false },
     2: { name: 'heart', src: heart, checked: false },
@@ -27,7 +33,7 @@ const dataSet_1 = {
     5: { name: 'head', src: head, checked: false },
     6: { name: 'hero', src: hero, checked: false },
     7: { name: 'up', src: up, checked: false },
-    8: { name: 'tort', src: tort, checked: false },
+    8: { name: 'tort', src: tort, checked: false }
 };
 
 /**
@@ -41,18 +47,18 @@ const dataSet_2 = {
     5: { name: 'chipmunks', src: chipmunks, checked: false },
     6: { name: 'spongeSrc', src: spongeSrc, checked: false, clickable: true },
     7: { name: 'curse', src: curse, checked: false },
-    8: { name: 'rapunzel', src: rapunzel, checked: false },
+    8: { name: 'rapunzel', src: rapunzel, checked: false }
 };
 
 const dataSet_3 = {
-    1: { name: '', src: mermaidSrc, checked: false },
-    2: { name: '', src: mermaidSrc, checked: false },
-    3: { name: '', src: spongeSrc, checked: false },
-    4: { name: '', src: mermaidSrc, checked: false },
-    5: { name: '', src: mermaidSrc, checked: false },
-    6: { name: '', src: spongeSrc,  checked: false },
-    7: { name: '', src: mermaidSrc, checked: false },
-    8: { name: '', src: spongeSrc, checked: false }
+    1: { name: 'brain', src: brain, checked: false },
+    2: { name: 'soulExtra', src: soulExtra, checked: false },
+    3: { name: 'corgi', src: corgi, checked: false },
+    4: { name: 'bossExtra', src: bossExtra, checked: false },
+    5: { name: 'chipmunksExtra', src: chipmunksExtra, checked: false },
+    6: { name: 'spongeSrc', src: spongeSrc, checked: false },
+    7: { name: 'curseExtra', src: curseExtra, checked: false },
+    8: { name: 'rapunzel', src: rapunzel, checked: false }
 };
 
 const cartoons = {
