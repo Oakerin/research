@@ -2,7 +2,6 @@ import React, { useEffect, useState } from 'react';
 import { getCartoons } from '../utils/cartoons';
 import GridList from '@material-ui/core/GridList';
 import GridListTile from '@material-ui/core/GridListTile';
-import GridListTileBar from '@material-ui/core/GridListTileBar';
 import makeStyles from '@material-ui/styles/makeStyles';
 import Button from '@material-ui/core/Button';
 import { useHistory, useParams } from 'react-router-dom';
@@ -14,6 +13,7 @@ import Slide from '@material-ui/core/Slide';
 import Typography from '@material-ui/core/Typography';
 import uniqid from 'uniqid';
 import { DateTime, Interval } from 'luxon';
+import checkSrc from '../assets/imgs/check.png';
 
 const GreenCheckbox = withStyles({
     root: {
@@ -48,6 +48,10 @@ const useStyles = makeStyles({
     },
     img: {
         cursor: 'pointer'
+    },
+    checkImg: {
+        position: 'absolute',
+        top: 0
     }
 });
 
@@ -118,18 +122,7 @@ export const CartoonsPage = () => {
                     {cartoons.map((cartoon) => (
                         <GridListTile key={cartoon.id} onClick={handleImgClick(cartoon)}>
                             <img className={classes.img} src={cartoon.src} alt={cartoon.name} />
-                            {id === lastPageId && (
-                                <GridListTileBar
-                                    actionIcon={
-                                        <GreenCheckbox
-                                            className={classes.checkBox}
-                                            color="secondary"
-                                            checked={cartoon.checked}
-                                            inputProps={{ 'aria-label': 'primary checkbox' }}
-                                        />
-                                    }
-                                />
-                            )}
+                            {cartoon.checked && <img className={classes.checkImg} src={checkSrc} alt="check" />}
                         </GridListTile>
                     ))}
                 </GridList>
