@@ -1,26 +1,26 @@
 {
   "files": {
     "main.css": "https://oakerin.github.io/research/static/css/main.6dea0f05.chunk.css",
-    "main.js": "https://oakerin.github.io/research/static/js/main.861d5886.chunk.js",
-    "main.js.map": "https://oakerin.github.io/research/static/js/main.861d5886.chunk.js.map",
-    "runtime-main.js": "https://oakerin.github.io/research/static/js/runtime-main.cf0435e4.js",
-    "runtime-main.js.map": "https://oakerin.github.io/research/static/js/runtime-main.cf0435e4.js.map",
-    "static/js/2.54bc0e49.chunk.js": "https://oakerin.github.io/research/static/js/2.54bc0e49.chunk.js",
-    "static/js/2.54bc0e49.chunk.js.map": "https://oakerin.github.io/research/static/js/2.54bc0e49.chunk.js.map",
-    "static/js/3.cf3b6e33.chunk.js": "https://oakerin.github.io/research/static/js/3.cf3b6e33.chunk.js",
-    "static/js/3.cf3b6e33.chunk.js.map": "https://oakerin.github.io/research/static/js/3.cf3b6e33.chunk.js.map",
+    "main.js": "https://oakerin.github.io/research/static/js/main.f8debc1e.chunk.js",
+    "main.js.map": "https://oakerin.github.io/research/static/js/main.f8debc1e.chunk.js.map",
+    "runtime-main.js": "https://oakerin.github.io/research/static/js/runtime-main.bc637186.js",
+    "runtime-main.js.map": "https://oakerin.github.io/research/static/js/runtime-main.bc637186.js.map",
+    "static/js/2.6e595818.chunk.js": "https://oakerin.github.io/research/static/js/2.6e595818.chunk.js",
+    "static/js/2.6e595818.chunk.js.map": "https://oakerin.github.io/research/static/js/2.6e595818.chunk.js.map",
+    "static/js/3.1c8a0c00.chunk.js": "https://oakerin.github.io/research/static/js/3.1c8a0c00.chunk.js",
+    "static/js/3.1c8a0c00.chunk.js.map": "https://oakerin.github.io/research/static/js/3.1c8a0c00.chunk.js.map",
     "index.html": "https://oakerin.github.io/research/index.html",
     "static/css/main.6dea0f05.chunk.css.map": "https://oakerin.github.io/research/static/css/main.6dea0f05.chunk.css.map",
-    "static/js/2.54bc0e49.chunk.js.LICENSE.txt": "https://oakerin.github.io/research/static/js/2.54bc0e49.chunk.js.LICENSE.txt",
+    "static/js/2.6e595818.chunk.js.LICENSE.txt": "https://oakerin.github.io/research/static/js/2.6e595818.chunk.js.LICENSE.txt",
     "static/media/bob.7b952ed8.png": "https://oakerin.github.io/research/static/media/bob.7b952ed8.png",
     "static/media/friends.ba212fe8.png": "https://oakerin.github.io/research/static/media/friends.ba212fe8.png",
     "static/media/p_mermaid.c66135d5.png": "https://oakerin.github.io/research/static/media/p_mermaid.c66135d5.png",
     "static/media/p_sponge.46a7fca9.png": "https://oakerin.github.io/research/static/media/p_sponge.46a7fca9.png"
   },
   "entrypoints": [
-    "static/js/runtime-main.cf0435e4.js",
-    "static/js/2.54bc0e49.chunk.js",
+    "static/js/runtime-main.bc637186.js",
+    "static/js/2.6e595818.chunk.js",
     "static/css/main.6dea0f05.chunk.css",
-    "static/js/main.861d5886.chunk.js"
+    "static/js/main.f8debc1e.chunk.js"
   ]
 }
