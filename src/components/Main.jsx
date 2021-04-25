@@ -8,7 +8,11 @@ import { FinishPage } from '../routes/FinishPage';
 
 const useStyles = makeStyles({
     root: {
-        paddingTop: 24
+        paddingTop: 24,
+        height: 'calc(100vh - 64px)',
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center'
     }
 });
 

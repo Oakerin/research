@@ -5,7 +5,7 @@ import GridListTile from '@material-ui/core/GridListTile';
 import GridListTileBar from '@material-ui/core/GridListTileBar';
 import makeStyles from '@material-ui/styles/makeStyles';
 import Button from '@material-ui/core/Button';
-import { useParams, useHistory, Link } from 'react-router-dom';
+import { useHistory, useParams } from 'react-router-dom';
 import Checkbox from '@material-ui/core/Checkbox';
 import { withStyles } from '@material-ui/core/styles';
 import { green } from '@material-ui/core/colors';
@@ -61,6 +61,7 @@ export const CartoonsPage = () => {
     const { id } = useParams();
     const [cartoons, setCartoons] = useState(getCartoons(id));
     const [open, setOpen] = useState(false);
+    const lastPageId = '2';
 
     useEffect(() => {
         setCartoons(getCartoons(id));
@@ -76,7 +77,7 @@ export const CartoonsPage = () => {
             }, 500);
         }
 
-        if (id === '3') {
+        if (id === lastPageId) {
             let newCartoons = [ ...cartoons ];
             newCartoons[val.id-1].checked = !newCartoons[val.id-1].checked;
             setCartoons(newCartoons);
@@ -104,7 +105,7 @@ export const CartoonsPage = () => {
     return (
         <div className={classes.root}>
             <div className={classes.grid}>
-                {id === '2' && (
+                {id === lastPageId && (
                         <>
                             <Typography variant="h5" style={{ marginBottom: 32 }}>
                                 Заметил ли ты какие-то изменения? <br/> Если да, нажми на те картинки, которые изменились. <br /> Если нет, нажми ЗАКОНЧИТЬ!
@@ -117,7 +118,7 @@ export const CartoonsPage = () => {
                     {cartoons.map((cartoon) => (
                         <GridListTile key={cartoon.id} onClick={handleImgClick(cartoon)}>
                             <img className={classes.img} src={cartoon.src} alt={cartoon.name} />
-                            {id === '2' && (
+                            {id === lastPageId && (
                                 <GridListTileBar
                                     actionIcon={
                                         <GreenCheckbox
@@ -135,8 +136,7 @@ export const CartoonsPage = () => {
 
             </div>
             <div>
-                {id === '2'
-                    ? (
+                {id === lastPageId && (
                         <Button
                             onClick={handleFinish}
                             className={classes.buttonNext}
@@ -146,27 +146,10 @@ export const CartoonsPage = () => {
                             Закончить
                         </Button>
                     )
-                    : (
-                        <Button
-                            disabled={id === '1'}
-                            className={classes.buttonNext}
-                            color="primary"
-                            variant="contained"
-                            component={Link}
-                            to={'/cartoons/' + (+id+1)}
-                        >
-                            Далее
-                        </Button>
-                    )
                 }
             </div>
 
-            <Dialog fullScreen open={open} TransitionComponent={Transition}>
-                <div style={{ textAlign: 'center' }}>
-                    <Typography variant="h1">Поздравляю!</Typography>
-                    <Typography variant="h2">Вы нашли Спанч Боба!</Typography>
-                </div>
-            </Dialog>
+            <Dialog fullScreen open={open} TransitionComponent={Transition} />
         </div>
     );
 };
