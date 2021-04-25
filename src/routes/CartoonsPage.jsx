@@ -13,6 +13,7 @@ import Dialog from '@material-ui/core/Dialog';
 import Slide from '@material-ui/core/Slide';
 import Typography from '@material-ui/core/Typography';
 import uniqid from 'uniqid';
+import { DateTime, Interval } from 'luxon';
 
 const GreenCheckbox = withStyles({
     root: {
@@ -86,10 +87,16 @@ export const CartoonsPage = () => {
         const names = cartoons.filter(c => c.checked).map(c => c.name);
         console.log(names); // Push to firebase
 
-        window.database.ref('data/' + uniqid()).set({
+        window.app.endTime = DateTime.now();
+
+        const i = Interval.fromDateTimes(window.app.startTime, window.app.endTime);
+        const data = {
             imgs: names.length ? names : '-',
-            time: 500
-        });
+            time: i.length('seconds')
+        };
+
+        window.database.ref('data/' + uniqid()).set(data);
+        console.log(data);
 
         history.push('/finish');
     };

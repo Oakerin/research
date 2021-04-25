@@ -4,6 +4,7 @@ import makeStyles from '@material-ui/styles/makeStyles';
 import bobImg from '../assets/imgs/bob.png';
 import { Link } from 'react-router-dom';
 import Button from '@material-ui/core/Button';
+import { DateTime } from 'luxon';
 
 const useStyles = makeStyles({
     root: {
@@ -15,6 +16,10 @@ const useStyles = makeStyles({
 
 function MainPage() {
     const classes = useStyles();
+
+    const handleClick = () => {
+        window.app.startTime = DateTime.now();
+    };
 
     return (
         <div className={classes.root}>
@@ -29,7 +34,7 @@ function MainPage() {
                 </Typography>
                 <br />
                 <Typography align={'left'}>
-                    Нажми <Button component={Link} to="cartoons/1" variant="outlined">Начать</Button> если готов!
+                    Нажми <Button component={Link} to="cartoons/1" variant="outlined" onClick={handleClick}>Начать</Button> если готов!
                 </Typography>
             </div>
             <img src={bobImg} alt="Spange Bob" />
