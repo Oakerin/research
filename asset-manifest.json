@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "https://oakerin.github.io/research/static/css/main.6dea0f05.chunk.css",
-    "main.js": "https://oakerin.github.io/research/static/js/main.fe465bdd.chunk.js",
-    "main.js.map": "https://oakerin.github.io/research/static/js/main.fe465bdd.chunk.js.map",
+    "main.js": "https://oakerin.github.io/research/static/js/main.f3815bfe.chunk.js",
+    "main.js.map": "https://oakerin.github.io/research/static/js/main.f3815bfe.chunk.js.map",
     "runtime-main.js": "https://oakerin.github.io/research/static/js/runtime-main.93bb75e5.js",
     "runtime-main.js.map": "https://oakerin.github.io/research/static/js/runtime-main.93bb75e5.js.map",
     "static/js/2.d5175a55.chunk.js": "https://oakerin.github.io/research/static/js/2.d5175a55.chunk.js",
@@ -39,6 +39,6 @@
     "static/js/runtime-main.93bb75e5.js",
     "static/js/2.d5175a55.chunk.js",
     "static/css/main.6dea0f05.chunk.css",
-    "static/js/main.fe465bdd.chunk.js"
+    "static/js/main.f3815bfe.chunk.js"
   ]
 }
