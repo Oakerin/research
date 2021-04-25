@@ -11,6 +11,13 @@ import up from '../assets/imgs/up.jpg';
 
 // 2
 import spongeSrc from '../assets/imgs/p_sponge.png';
+import boss from '../assets/imgs/boss.jpg';
+import brain from '../assets/imgs/brain.jpg';
+import chipmunks from '../assets/imgs/chipmunks.jpg';
+import corgi from '../assets/imgs/corgi.jpg';
+import curse from '../assets/imgs/curse.jpg';
+import rapunzel from '../assets/imgs/rapunzel.jpg';
+import soul from '../assets/imgs/soul.jpg';
 
 const dataSet_1 = {
     1: { name: 'everest', src: everest, checked: false },
@@ -27,14 +34,14 @@ const dataSet_1 = {
  * clickable - чтобы найти спанчбоба на второй странице
  */
 const dataSet_2 = {
-    1: { name: '', src: mermaidSrc, checked: false },
-    2: { name: '', src: mermaidSrc, checked: false },
-    3: { name: '', src: mermaidSrc, checked: false },
-    4: { name: '', src: mermaidSrc, checked: false },
-    5: { name: '', src: mermaidSrc, checked: false },
-    6: { name: '', src: spongeSrc,  checked: false, clickable: true },
-    7: { name: '', src: mermaidSrc, checked: false },
-    8: { name: '', src: mermaidSrc, checked: false }
+    1: { name: 'brain', src: brain, checked: false },
+    2: { name: 'soul', src: soul, checked: false },
+    3: { name: 'corgi', src: corgi, checked: false },
+    4: { name: 'boss', src: boss, checked: false },
+    5: { name: 'chipmunks', src: chipmunks, checked: false },
+    6: { name: 'spongeSrc', src: spongeSrc, checked: false, clickable: true },
+    7: { name: 'curse', src: curse, checked: false },
+    8: { name: 'rapunzel', src: rapunzel, checked: false },
 };
 
 const dataSet_3 = {
