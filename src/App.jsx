@@ -5,6 +5,7 @@ import CssBaseline from '@material-ui/core/CssBaseline';
 import { Header } from './components/Header';
 import ThemeProvider from '@material-ui/styles/ThemeProvider';
 import { Main } from './components/Main';
+import { getCartoons } from './utils/cartoons';
 
 function App() {
     const theme = createMuiTheme();
@@ -16,6 +17,10 @@ function App() {
         };
     }, []);
 
+    const cartoons1 = getCartoons(1);
+    const cartoons2 = getCartoons(2);
+    const cartoons3 = getCartoons(3);
+
     return (
         <ThemeProvider theme={theme}>
             <div>
@@ -24,6 +29,19 @@ function App() {
                     <Header />
 
                     <Main />
+
+                    {/* Костыль: заранее подгружаю картинки */}
+                    <div style={{ display: 'none' }}>
+                        {cartoons1.map((cartoon) => (
+                            <img key={cartoon.name} src={cartoon.src} alt={cartoon.name} />
+                        ))}
+                        {cartoons2.map((cartoon) => (
+                            <img key={cartoon.name} src={cartoon.src} alt={cartoon.name} />
+                        ))}
+                        {cartoons3.map((cartoon) => (
+                            <img key={cartoon.name} src={cartoon.src} alt={cartoon.name} />
+                        ))}
+                    </div>
                 </Router>
             </div>
         </ThemeProvider>
