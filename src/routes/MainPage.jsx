@@ -25,12 +25,12 @@ function MainPage() {
         <div className={classes.root}>
             <div>
                 <Typography align={'left'} variant="h4" gutterBottom component="h1">
-                    Привет, дорогой друг! <br/>
+                    Привет! <br/>
                 </Typography>
                 <Typography align={'left'} variant="body1">
-                    Спасибо, что согласился принять участие в нашем исследовании. <br />
-                    Тебе будет предложено найти постер одного <br/>
-                    очень известного мультфильма: Губка Боб.
+                    Спасибо, что согласился принять участие в исследовании. <br />
+                    Оно займет всего 10 минут. <br/>
+                    Твоя задача — найти изображение с Рапунцель.
                 </Typography>
                 <br />
                 <Typography align={'left'}>
