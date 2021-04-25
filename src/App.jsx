@@ -19,7 +19,6 @@ function App() {
 
     const cartoons1 = getCartoons(1);
     const cartoons2 = getCartoons(2);
-    const cartoons3 = getCartoons(3);
 
     return (
         <ThemeProvider theme={theme}>
@@ -36,9 +35,6 @@ function App() {
                             <img key={cartoon.name} src={cartoon.src} alt={cartoon.name} />
                         ))}
                         {cartoons2.map((cartoon) => (
-                            <img key={cartoon.name} src={cartoon.src} alt={cartoon.name} />
-                        ))}
-                        {cartoons3.map((cartoon) => (
                             <img key={cartoon.name} src={cartoon.src} alt={cartoon.name} />
                         ))}
                     </div>

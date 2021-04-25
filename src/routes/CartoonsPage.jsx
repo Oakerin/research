@@ -104,27 +104,20 @@ export const CartoonsPage = () => {
     return (
         <div className={classes.root}>
             <div className={classes.grid}>
-                {id === '3'
-                    ? (
+                {id === '2' && (
                         <>
                             <Typography variant="h5" style={{ marginBottom: 32 }}>
                                 Заметил ли ты какие-то изменения? <br/> Если да, нажми на те картинки, которые изменились. <br /> Если нет, нажми ЗАКОНЧИТЬ!
                             </Typography>
                         </>
                     )
-                    : (
-                        <>
-                            <Typography variant="h5" style={{ marginBottom: 32 }}>
-                                Найдите Спанч Боба и нажмите на него! <br/> Если его тут нет, нажмите кнопку ДАЛЕЕ.
-                            </Typography>
-                        </>
-                    )
                 }
-                <GridList cellHeight={354} cols={4} spacing={46}>
+
+                <GridList cellHeight={354} cols={5} spacing={46}>
                     {cartoons.map((cartoon) => (
                         <GridListTile key={cartoon.id} onClick={handleImgClick(cartoon)}>
                             <img className={classes.img} src={cartoon.src} alt={cartoon.name} />
-                            {id === '3' && (
+                            {id === '2' && (
                                 <GridListTileBar
                                     actionIcon={
                                         <GreenCheckbox
@@ -139,9 +132,10 @@ export const CartoonsPage = () => {
                         </GridListTile>
                     ))}
                 </GridList>
+
             </div>
             <div>
-                {id === '3'
+                {id === '2'
                     ? (
                         <Button
                             onClick={handleFinish}
@@ -154,7 +148,7 @@ export const CartoonsPage = () => {
                     )
                     : (
                         <Button
-                            disabled={id > 1}
+                            disabled={id === '1'}
                             className={classes.buttonNext}
                             color="primary"
                             variant="contained"
