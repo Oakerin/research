@@ -30,11 +30,7 @@ firebase.analytics();
 
 // Get a reference to the database service
 var database = firebase.database();
-database.ref('data/' + 3).set({
-    username: 'name',
-    email: 'email',
-    profile_picture: 'imageUrl'
-});
+window.database = database;
 
 ReactDOM.render(
     <React.StrictMode>

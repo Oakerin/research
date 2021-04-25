@@ -12,6 +12,7 @@ import { green } from '@material-ui/core/colors';
 import Dialog from '@material-ui/core/Dialog';
 import Slide from '@material-ui/core/Slide';
 import Typography from '@material-ui/core/Typography';
+import uniqid from 'uniqid';
 
 const GreenCheckbox = withStyles({
     root: {
@@ -82,7 +83,14 @@ export const CartoonsPage = () => {
     };
 
     const handleFinish = () => {
-        console.log(cartoons); // Push to firebase
+        const names = cartoons.filter(c => c.checked).map(c => c.name);
+        console.log(names); // Push to firebase
+
+        window.database.ref('data/' + uniqid()).set({
+            imgs: names.length ? names : '-',
+            time: 500
+        });
+
         history.push('/finish');
     };
 
@@ -92,7 +100,9 @@ export const CartoonsPage = () => {
                 {id === '3'
                     ? (
                         <>
-                            <Typography variant="h5" gutterBottom>Выберите картинки, которые изменились и потом нажмите кнопку ЗАКОНЧИТЬ!</Typography>
+                            <Typography variant="h5" style={{ marginBottom: 32 }}>
+                                Заметил ли ты какие-то изменения? <br/> Если да, нажми на те картинки, которые изменились. <br /> Если нет, нажми ЗАКОНЧИТЬ!
+                            </Typography>
                         </>
                     )
                     : (
