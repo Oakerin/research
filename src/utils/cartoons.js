@@ -12,18 +12,18 @@ import soulExtra from '../assets/imgs/soul+.jpg';
  */
 const dataSet_1 = {
     1: { name: 'curse', src: curse, checked: false },
-    2: { name: 'rapunzel', src: rapunzel, checked: false, clickable: true },
+    2: { name: 'chipmunks', src: chipmunks, checked: false },
     3: { name: 'soul', src: soul, checked: false },
     4: { name: 'brain', src: brain, checked: false },
-    5: { name: 'chipmunks', src: chipmunks, checked: false }
+    5: { name: 'rapunzel', src: rapunzel, checked: false, clickable: true },
 };
 
 const dataSet_2 = {
     1: { name: 'curseExtra', src: curseExtra, checked: false },
-    2: { name: 'rapunzel', src: rapunzel, checked: false },
+    2: { name: 'chipmunksExtra', src: chipmunksExtra, checked: false },
     3: { name: 'soulExtra', src: soulExtra, checked: false },
     4: { name: 'brain', src: brain, checked: false },
-    5: { name: 'chipmunksExtra', src: chipmunksExtra, checked: false }
+    5: { name: 'rapunzel', src: rapunzel, checked: false }
 };
 
 const cartoons = {
