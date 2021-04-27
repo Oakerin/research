@@ -12,6 +12,8 @@ function App() {
 
     useEffect(() => {
         window.app = {
+            imgs: null,
+            changed: null,
             startTime: null,
             endTime: null
         };
