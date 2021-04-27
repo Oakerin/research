@@ -6,6 +6,8 @@ import { Header } from './components/Header';
 import ThemeProvider from '@material-ui/styles/ThemeProvider';
 import { Main } from './components/Main';
 import { getCartoons } from './utils/cartoons';
+import staticImg1 from '../src/assets/imgs/static1.png';
+import staticImg2 from '../src/assets/imgs/static2.png';
 
 function App() {
     const theme = createMuiTheme();
@@ -30,6 +32,8 @@ function App() {
                         {cartoons2.map((cartoon) => (
                             <img key={cartoon.name} src={cartoon.src} alt={cartoon.name} />
                         ))}
+                        <img width={1600} src={staticImg1} alt="static1" />
+                        <img width={1600} src={staticImg2} alt="static2" />
                     </div>
                 </Router>
             </div>
