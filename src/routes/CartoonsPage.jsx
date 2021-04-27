@@ -6,11 +6,11 @@ import makeStyles from '@material-ui/styles/makeStyles';
 import Button from '@material-ui/core/Button';
 import { useHistory, useParams } from 'react-router-dom';
 import Dialog from '@material-ui/core/Dialog';
-import Slide from '@material-ui/core/Slide';
 import Typography from '@material-ui/core/Typography';
 import uniqid from 'uniqid';
 import { DateTime, Interval } from 'luxon';
 import checkSrc from '../assets/imgs/check.png';
+import { Transition } from '../components/Transition';
 
 const useStyles = makeStyles({
     root: {
@@ -40,10 +40,6 @@ const useStyles = makeStyles({
         position: 'absolute',
         top: 0
     }
-});
-
-const Transition = React.forwardRef(function Transition(props, ref) {
-    return <Slide direction="up" ref={ref} {...props} />;
 });
 
 export const CartoonsPage = () => {
