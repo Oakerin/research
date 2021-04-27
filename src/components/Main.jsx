@@ -1,10 +1,11 @@
 import React from 'react';
 import Container from '@material-ui/core/Container';
-import { Route, Switch, Redirect } from 'react-router-dom';
+import { Redirect, Route, Switch } from 'react-router-dom';
 import MainPage from '../routes/MainPage';
 import makeStyles from '@material-ui/styles/makeStyles';
 import { CartoonsPage } from '../routes/CartoonsPage';
 import { FinishPage } from '../routes/FinishPage';
+import { StaticPage } from '../routes/StaticPage';
 
 const useStyles = makeStyles({
     root: {
@@ -30,7 +31,7 @@ export function Main() {
                     <MainPage />
                 </Route>
                 <Route path="/static">
-                    Static
+                    <StaticPage />
                 </Route>
                 <Route path="/cartoons/:id">
                     <CartoonsPage />

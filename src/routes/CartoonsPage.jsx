@@ -5,25 +5,12 @@ import GridListTile from '@material-ui/core/GridListTile';
 import makeStyles from '@material-ui/styles/makeStyles';
 import Button from '@material-ui/core/Button';
 import { useHistory, useParams } from 'react-router-dom';
-import Checkbox from '@material-ui/core/Checkbox';
-import { withStyles } from '@material-ui/core/styles';
-import { green } from '@material-ui/core/colors';
 import Dialog from '@material-ui/core/Dialog';
 import Slide from '@material-ui/core/Slide';
 import Typography from '@material-ui/core/Typography';
 import uniqid from 'uniqid';
 import { DateTime, Interval } from 'luxon';
 import checkSrc from '../assets/imgs/check.png';
-
-const GreenCheckbox = withStyles({
-    root: {
-        color: green[400],
-        '&$checked': {
-            color: green[600],
-        },
-    },
-    checked: {},
-})((props) => <Checkbox color="default" {...props} />);
 
 const useStyles = makeStyles({
     root: {
