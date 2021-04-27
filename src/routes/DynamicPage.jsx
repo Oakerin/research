@@ -40,7 +40,7 @@ const useStyles = makeStyles({
     }
 });
 
-export const CartoonsPage = () => {
+export const DynamicPage = () => {
     const history = useHistory();
     const classes = useStyles();
     const { id } = useParams();

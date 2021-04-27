@@ -3,7 +3,7 @@ import Container from '@material-ui/core/Container';
 import { Redirect, Route, Switch } from 'react-router-dom';
 import MainPage from '../routes/MainPage';
 import makeStyles from '@material-ui/styles/makeStyles';
-import { CartoonsPage } from '../routes/CartoonsPage';
+import { DynamicPage } from '../routes/DynamicPage';
 import { FinishPage } from '../routes/FinishPage';
 import { StaticPage } from '../routes/StaticPage';
 
@@ -34,7 +34,7 @@ export function Main() {
                     <StaticPage />
                 </Route>
                 <Route path="/cartoons/:id">
-                    <CartoonsPage />
+                    <DynamicPage />
                 </Route>
                 <Route path="/finish">
                     <FinishPage />
