@@ -7,6 +7,7 @@ import Button from '@material-ui/core/Button';
 import makeStyles from '@material-ui/styles/makeStyles';
 import logoSrc from '../assets/imgs/logo.png'
 import { Link } from 'react-router-dom';
+import { useLocation } from "react-router-dom";
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -22,6 +23,11 @@ const useStyles = makeStyles((theme) => ({
 
 export function Header() {
     const classes = useStyles();
+    const location = useLocation();
+
+    if (location.pathname === '/static') {
+        return null;
+    }
 
     return (
         <AppBar position="static">

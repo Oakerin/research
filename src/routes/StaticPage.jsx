@@ -6,8 +6,22 @@ import { Transition } from '../components/Transition';
 import Typography from '@material-ui/core/Typography';
 import Button from '@material-ui/core/Button';
 import { Link } from 'react-router-dom';
+import makeStyles from '@material-ui/styles/makeStyles';
+
+const useStyles = makeStyles({
+    form: {
+        display: 'flex',
+        alignItems: 'center',
+        flexDirection: 'column',
+        marginBottom: 24
+    },
+    button: {
+        margin: '0 8px'
+    }
+});
 
 export function StaticPage() {
+    const classes = useStyles();
     const [next, setNext] = useState(false);
     const [open, setOpen] = useState(false);
 
@@ -22,7 +36,7 @@ export function StaticPage() {
             setTimeout(() => {
                 setOpen(false);
             }, 500);
-        }, 5000);
+        }, 10000);
 
         return () => {
             clearTimeout(timer);
@@ -37,15 +51,35 @@ export function StaticPage() {
     return (
         <div>
             {!next
-                ? <img width={1280} src={staticImg1} alt="static1" />
+                ? <img width={1600} src={staticImg1} alt="static1" />
                 : (
                     <>
-                        <Typography>
-                            Заметили ли вы какие - нибудь изменения?
-                        </Typography>
-                        <Button variant="contained" component={Link} to={handleAnswer(true)}>Да</Button>
-                        <Button variant="contained" component={Link} to={handleAnswer(false)}>Нет</Button>
-                        <img width={1280} src={staticImg2} alt="static2" />
+                        <div className={classes.form}>
+                            <Typography>
+                                Заметил какие - нибудь изменения?
+                            </Typography>
+                            <div>
+                                <Button
+                                    className={classes.button}
+                                    color="primary"
+                                    variant="contained"
+                                    component={Link}
+                                    to={handleAnswer(true)}
+                                >
+                                    Да
+                                </Button>
+                                <Button
+                                    className={classes.button}
+                                    color="primary"
+                                    variant="contained"
+                                    component={Link}
+                                    to={handleAnswer(false)}
+                                >
+                                    Нет
+                                </Button>
+                            </div>
+                        </div>
+                        <img width={1600} src={staticImg2} alt="static2" />
                     </>
                 )
             }
