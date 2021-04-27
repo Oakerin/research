@@ -7,8 +7,7 @@ import Button from '@material-ui/core/Button';
 import { useHistory, useParams } from 'react-router-dom';
 import Dialog from '@material-ui/core/Dialog';
 import Typography from '@material-ui/core/Typography';
-import uniqid from 'uniqid';
-import { DateTime, Interval } from 'luxon';
+import { DateTime } from 'luxon';
 import checkSrc from '../assets/imgs/check.png';
 import { Transition } from '../components/Transition';
 
@@ -74,17 +73,7 @@ export const CartoonsPage = () => {
     const handleFinish = () => {
         const names = cartoons.filter(c => c.checked).map(c => c.name);
         console.log(names); // Push to firebase
-
-        window.app.endTime = DateTime.now();
-
-        const i = Interval.fromDateTimes(window.app.startTime, window.app.endTime);
-        const data = {
-            imgs: names.length ? names : '-',
-            time: i.length('seconds')
-        };
-
-        window.database.ref('data/' + uniqid()).set(data);
-        console.log(data);
+        window.app.imgs = names.length ? names : '-';
 
         history.push('/finish');
     };

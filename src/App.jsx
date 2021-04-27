@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { createMuiTheme } from '@material-ui/core/styles';
 import { BrowserRouter as Router } from 'react-router-dom';
 import CssBaseline from '@material-ui/core/CssBaseline';
@@ -9,15 +9,6 @@ import { getCartoons } from './utils/cartoons';
 
 function App() {
     const theme = createMuiTheme();
-
-    useEffect(() => {
-        window.app = {
-            imgs: null,
-            changed: null,
-            startTime: null,
-            endTime: null
-        };
-    }, []);
 
     const cartoons1 = getCartoons(1);
     const cartoons2 = getCartoons(2);

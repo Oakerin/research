@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import Typography from '@material-ui/core/Typography';
 import makeStyles from '@material-ui/styles/makeStyles';
 import rapunzelSrc from '../assets/imgs/rapunzel_main.png';
@@ -17,6 +17,15 @@ const useStyles = makeStyles({
 
 function MainPage() {
     const classes = useStyles();
+
+    useEffect(() => {
+        window.app = {
+            imgs: null,
+            changed: null,
+            startTime: null,
+            endTime: null
+        };
+    }, []);
 
     const handleClick = () => {
         window.app.startTime = DateTime.now();
