@@ -5,6 +5,7 @@ import rapunzelSrc from '../assets/imgs/rapunzel_main.png';
 import { Link } from 'react-router-dom';
 import Button from '@material-ui/core/Button';
 import { DateTime } from 'luxon';
+import { getRandomInt } from '../utils/getRandomInt';
 
 const useStyles = makeStyles({
     root: {
@@ -21,6 +22,17 @@ function MainPage() {
         window.app.startTime = DateTime.now();
     };
 
+    const linkTo = (location) => {
+        const urls = {
+            0: 'cartoons/1',
+            1: 'static'
+        };
+
+        const randInt = getRandomInt(2);
+
+        return { ...location, pathname: urls[randInt] };
+    };
+
     return (
         <div className={classes.root}>
             <div>
@@ -34,7 +46,7 @@ function MainPage() {
                 </Typography>
                 <br />
                 <Typography align={'left'} variant="h4" component="p">
-                    Нажми <Button component={Link} to="cartoons/1" variant="outlined" onClick={handleClick}>Начать</Button> если готов!
+                    Нажми <Button component={Link} to={linkTo} variant="outlined" onClick={handleClick}>Начать</Button> если готов!
                 </Typography>
             </div>
             <img src={rapunzelSrc} alt="rapunzel" width={650} height={640} />

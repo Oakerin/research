@@ -29,6 +29,9 @@ export function Main() {
                 <Route path="/main">
                     <MainPage />
                 </Route>
+                <Route path="/static">
+                    Static
+                </Route>
                 <Route path="/cartoons/:id">
                     <CartoonsPage />
                 </Route>
