@@ -7,7 +7,6 @@ import Button from '@material-ui/core/Button';
 import { useHistory, useParams } from 'react-router-dom';
 import Dialog from '@material-ui/core/Dialog';
 import Typography from '@material-ui/core/Typography';
-import { DateTime } from 'luxon';
 import checkSrc from '../assets/imgs/check.png';
 import { Transition } from '../components/Transition';
 
@@ -48,6 +47,10 @@ export const CartoonsPage = () => {
     const [cartoons, setCartoons] = useState(getCartoons(id));
     const [open, setOpen] = useState(false);
     const lastPageId = '2';
+
+    useEffect(() => {
+        window.app.type = 'dynamic';
+    }, []);
 
     useEffect(() => {
         setCartoons(getCartoons(id));

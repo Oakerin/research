@@ -20,6 +20,7 @@ function MainPage() {
 
     useEffect(() => {
         window.app = {
+            type: null, // static/dynamic
             imgs: null,
             changed: null,
             startTime: null,

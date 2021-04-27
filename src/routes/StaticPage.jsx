@@ -12,6 +12,10 @@ export function StaticPage() {
     const [open, setOpen] = useState(false);
 
     useEffect(() => {
+        window.app.type = 'static';
+    }, []);
+
+    useEffect(() => {
         const timer = setTimeout(() => {
             setNext(true);
             setOpen(true);
@@ -27,7 +31,6 @@ export function StaticPage() {
 
     const handleAnswer = (val) => (location) => {
         window.app.changed = val;
-        console.log(window.app);
         return { ...location, pathname: '/finish' };
     };
 

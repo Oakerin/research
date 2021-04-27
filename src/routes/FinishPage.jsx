@@ -18,18 +18,14 @@ export function FinishPage() {
 
     useEffect(() => {
         window.app.endTime = DateTime.now();
-        const app = window.app;
-        const i = Interval.fromDateTimes(app.startTime, app.endTime);
+        const { startTime, endTime, ...app } = window.app;
+        const i = Interval.fromDateTimes(startTime, endTime);
+        const data = {...app, time: i.length('seconds')};
 
-        const data = {
-            imgs: app.imgs,
-            changed: app.changed,
-            time: i.length('seconds')
-        };
-
-        console.log('send data', data);
-
-        window.database.ref('data/' + uniqid()).set(data);
+        if (window.app.type != null) {
+            console.log('send data', data);
+            window.database.ref('data/' + uniqid()).set(data);
+        }
     }, []);
 
     return (
