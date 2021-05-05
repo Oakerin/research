@@ -92,13 +92,14 @@ function SquarePage() {
 
     useEffect(() => {
         const callback = (event) => {
-            const keyName = event.key;
+            const keyCode = event.code;
+            console.log(event);
 
-            if (keyName === 'q') {
+            if (keyCode === 'KeyQ') {
                 handleAnswer('diff')();
             }
 
-            if (keyName === 'e') {
+            if (keyCode === 'KeyE') {
                 handleAnswer('same')();
             }
         };
