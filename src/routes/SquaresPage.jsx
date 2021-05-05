@@ -118,8 +118,8 @@ function SquarePage() {
             <Typography variant="h4">Шаг {step}_{subStep}</Typography>
 
             {!next
-                ? <img src={img1.default} width={600} height={600} />
-                : <img src={img2.default} width={600} height={600} />
+                ? <img src={img1.default} width={600} height={600} alt="square" />
+                : <img src={img2.default} width={600} height={600} alt="square" />
             }
 
             {next && (
