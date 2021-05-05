@@ -32,6 +32,18 @@ firebase.analytics();
 var database = firebase.database();
 window.database = database;
 
+window.defaultAppData = {
+    type: null, // static/dynamic/squares
+    imgs: null,
+    changed: null,
+    squares: null,
+    startTime: null,
+    endTime: null
+};
+
+// Main object
+window.app = { ...window.defaultAppData };
+
 ReactDOM.render(
     <React.StrictMode>
         <App/>

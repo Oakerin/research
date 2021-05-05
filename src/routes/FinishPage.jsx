@@ -4,6 +4,7 @@ import friendsSrc from '../assets/imgs/friends.png';
 import makeStyles from '@material-ui/styles/makeStyles';
 import uniqid from 'uniqid';
 import { DateTime, Interval } from 'luxon';
+import { exitFullscreen } from '../utils/toggleFullscreen';
 
 const useStyles = makeStyles({
     root: {
@@ -17,10 +18,18 @@ export function FinishPage() {
     const classes = useStyles();
 
     useEffect(() => {
+        exitFullscreen();
+
         window.app.endTime = DateTime.now();
         const { startTime, endTime, ...app } = window.app;
         const i = Interval.fromDateTimes(startTime, endTime);
         const data = {...app, time: i.length('seconds')};
+
+        if (window.app.type === 'squares') {
+            console.log('send squares', data);
+            window.database.ref('squares/' + uniqid()).set(data);
+            return;
+        }
 
         if (window.app.type != null) {
             console.log('send data', data);

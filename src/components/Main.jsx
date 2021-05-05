@@ -6,6 +6,7 @@ import makeStyles from '@material-ui/styles/makeStyles';
 import { DynamicPage } from '../routes/DynamicPage';
 import { FinishPage } from '../routes/FinishPage';
 import { StaticPage } from '../routes/StaticPage';
+import SquarePage from '../routes/SquaresPage';
 
 const useStyles = makeStyles({
     root: {
@@ -29,6 +30,9 @@ export function Main() {
                 </Route>
                 <Route path="/main">
                     <MainPage />
+                </Route>
+                <Route path="/squares">
+                    <SquarePage />
                 </Route>
                 <Route path="/static">
                     <StaticPage />

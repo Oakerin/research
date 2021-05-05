@@ -2,10 +2,11 @@ import React, { useEffect } from 'react';
 import Typography from '@material-ui/core/Typography';
 import makeStyles from '@material-ui/styles/makeStyles';
 import rapunzelSrc from '../assets/imgs/rapunzel_main.png';
-import { Link } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
 import Button from '@material-ui/core/Button';
 import { DateTime } from 'luxon';
 import { getRandomInt } from '../utils/getRandomInt';
+import { requestFullscreen } from '../utils/toggleFullscreen';
 
 const useStyles = makeStyles({
     root: {
@@ -17,15 +18,26 @@ const useStyles = makeStyles({
 
 function MainPage() {
     const classes = useStyles();
+    const history = useHistory();
 
     useEffect(() => {
-        window.app = {
-            type: null, // static/dynamic
-            imgs: null,
-            changed: null,
-            startTime: null,
-            endTime: null
+        const callback = (event) => {
+            const keyName = event.key;
+
+            if (keyName === ' ') {
+                requestFullscreen();
+                window.app.startTime = DateTime.now();
+                history.push('/squares');
+            }
         };
+
+         window.addEventListener('keypress', callback);
+
+         return () => window.removeEventListener('keypress', callback);
+    }, []);
+
+    useEffect(() => {
+        window.app = { ...window.defaultAppData };
     }, []);
 
     const handleClick = () => {
