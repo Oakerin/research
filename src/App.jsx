@@ -1,6 +1,6 @@
 import React from 'react';
 import { createMuiTheme } from '@material-ui/core/styles';
-import { BrowserRouter as Router } from 'react-router-dom';
+import { HashRouter } from 'react-router-dom';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import { Header } from './components/Header';
 import ThemeProvider from '@material-ui/styles/ThemeProvider';
@@ -19,7 +19,7 @@ function App() {
         <ThemeProvider theme={theme}>
             <div>
                 <CssBaseline />
-                <Router basename="research">
+                <HashRouter basename="research">
                     <Header />
 
                     <Main />
@@ -35,7 +35,7 @@ function App() {
                         <img width={1600} src={staticImg1} alt="static1" />
                         <img width={1600} src={staticImg2} alt="static2" />
                     </div>
-                </Router>
+                </HashRouter>
             </div>
         </ThemeProvider>
     );
