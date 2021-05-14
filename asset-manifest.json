@@ -1,17 +1,17 @@
 {
   "files": {
     "main.css": "https://oakerin.github.io/research/static/css/main.6dea0f05.chunk.css",
-    "main.js": "https://oakerin.github.io/research/static/js/main.47eee5fe.chunk.js",
-    "main.js.map": "https://oakerin.github.io/research/static/js/main.47eee5fe.chunk.js.map",
+    "main.js": "https://oakerin.github.io/research/static/js/main.7563f7aa.chunk.js",
+    "main.js.map": "https://oakerin.github.io/research/static/js/main.7563f7aa.chunk.js.map",
     "runtime-main.js": "https://oakerin.github.io/research/static/js/runtime-main.b0ef6c2c.js",
     "runtime-main.js.map": "https://oakerin.github.io/research/static/js/runtime-main.b0ef6c2c.js.map",
-    "static/js/2.c312c086.chunk.js": "https://oakerin.github.io/research/static/js/2.c312c086.chunk.js",
-    "static/js/2.c312c086.chunk.js.map": "https://oakerin.github.io/research/static/js/2.c312c086.chunk.js.map",
+    "static/js/2.ee710975.chunk.js": "https://oakerin.github.io/research/static/js/2.ee710975.chunk.js",
+    "static/js/2.ee710975.chunk.js.map": "https://oakerin.github.io/research/static/js/2.ee710975.chunk.js.map",
     "static/js/3.e975534f.chunk.js": "https://oakerin.github.io/research/static/js/3.e975534f.chunk.js",
     "static/js/3.e975534f.chunk.js.map": "https://oakerin.github.io/research/static/js/3.e975534f.chunk.js.map",
     "index.html": "https://oakerin.github.io/research/index.html",
     "static/css/main.6dea0f05.chunk.css.map": "https://oakerin.github.io/research/static/css/main.6dea0f05.chunk.css.map",
-    "static/js/2.c312c086.chunk.js.LICENSE.txt": "https://oakerin.github.io/research/static/js/2.c312c086.chunk.js.LICENSE.txt",
+    "static/js/2.ee710975.chunk.js.LICENSE.txt": "https://oakerin.github.io/research/static/js/2.ee710975.chunk.js.LICENSE.txt",
     "static/media/brain.bdf25b28.jpg": "https://oakerin.github.io/research/static/media/brain.bdf25b28.jpg",
     "static/media/chipmunks+.dd26d9b5.jpg": "https://oakerin.github.io/research/static/media/chipmunks+.dd26d9b5.jpg",
     "static/media/chipmunks.ede8f54d.jpg": "https://oakerin.github.io/research/static/media/chipmunks.ede8f54d.jpg",
@@ -63,8 +63,8 @@
   },
   "entrypoints": [
     "static/js/runtime-main.b0ef6c2c.js",
-    "static/js/2.c312c086.chunk.js",
+    "static/js/2.ee710975.chunk.js",
     "static/css/main.6dea0f05.chunk.css",
-    "static/js/main.47eee5fe.chunk.js"
+    "static/js/main.7563f7aa.chunk.js"
   ]
 }
