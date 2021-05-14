@@ -51,7 +51,7 @@ function SquarePage() {
                     setNext(true);
                     setOpen(false);
                 }, 500);
-            }, 500);
+            }, 1000);
         }
 
         return () => {
