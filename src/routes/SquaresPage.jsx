@@ -9,11 +9,6 @@ import { useHistory } from 'react-router-dom';
 const schema = {
     1: { type: 'same', img1: 'same', img1_k: 0, img2: 'same', img2_k: 0 },
     2: { type: 'diff', img1: 'diff', img1_k: 0, img2: 'diff', img2_k: 1 }
-    // 2: { type: 'diff', img1: 'same', img1_k: 0, img2: 'diff', img2_k: 0 },
-    // 3: { type: 'diff', img1: 'same', img1_k: 0, img2: 'diff', img2_k: 1 },
-    // 4: { type: 'same', img1: 'diff', img1_k: 0, img2: 'diff', img2_k: 0 },
-    // 5: { type: 'same', img1: 'diff', img1_k: 1, img2: 'diff', img2_k: 1 },
-    // 6: { type: 'diff', img1: 'diff', img1_k: 0, img2: 'diff', img2_k: 1 }
 };
 
 const useStyles = makeStyles({
