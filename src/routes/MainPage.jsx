@@ -24,7 +24,17 @@ function MainPage() {
         const callback = (event) => {
             const keyName = event.key;
 
-            if (keyName === ' ') {
+            if (keyName === '1') {
+                window.app.startTime = DateTime.now();
+                history.push('/static');
+            }
+
+            if (keyName === '2') {
+                window.app.startTime = DateTime.now();
+                history.push('/cartoons/1');
+            }
+
+            if (keyName === ' ' || keyName === '3') {
                 requestFullscreen();
                 window.app.startTime = DateTime.now();
                 history.push('/squares');
