@@ -57,7 +57,7 @@ export function StaticPage() {
                         <img width={1600} src={staticImg2} alt="static2" />
                         <div className={classes.form}>
                             <Typography variant="h5" gutterBottom>
-                                Заметил какие - нибудь изменения?
+                                Заметил какие-нибудь изменения на картинах?
                             </Typography>
                             <div>
                                 <Button
