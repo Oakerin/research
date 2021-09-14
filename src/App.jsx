@@ -33,7 +33,7 @@ function App() {
         <ThemeProvider theme={theme}>
             <div>
                 <CssBaseline />
-                <HashRouter basename="research">
+                <HashRouter>
                     <Header />
 
                     <Main />
