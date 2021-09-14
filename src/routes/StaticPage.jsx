@@ -54,8 +54,9 @@ export function StaticPage() {
                 ? <img width={1600} src={staticImg1} alt="static1" />
                 : (
                     <>
+                        <img width={1600} src={staticImg2} alt="static2" />
                         <div className={classes.form}>
-                            <Typography>
+                            <Typography variant="h5" gutterBottom>
                                 Заметил какие - нибудь изменения?
                             </Typography>
                             <div>
@@ -79,7 +80,6 @@ export function StaticPage() {
                                 </Button>
                             </div>
                         </div>
-                        <img width={1600} src={staticImg2} alt="static2" />
                     </>
                 )
             }
