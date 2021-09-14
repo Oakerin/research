@@ -8,6 +8,20 @@ import { Main } from './components/Main';
 import { getCartoons } from './utils/cartoons';
 import staticImg1 from '../src/assets/imgs/static1.png';
 import staticImg2 from '../src/assets/imgs/static2.png';
+import { database } from './firebaseConfig';
+
+window.database = database;
+window.defaultAppData = {
+    type: null, // static/dynamic/squares
+    imgs: null,
+    changed: null,
+    squares: null,
+    startTime: null,
+    endTime: null
+};
+
+// Main object
+window.app = { ...window.defaultAppData };
 
 function App() {
     const theme = createMuiTheme();
