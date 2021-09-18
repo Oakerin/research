@@ -1,12 +1,11 @@
 import React, { useEffect, useState } from 'react';
 import Typography from '@material-ui/core/Typography';
 import Square from './Square';
+import { Redirect } from 'react-router-dom';
 
 const dataset = [
     { img1: 'same2', img2: 'same2' },
     { img1: 'diff3', img2: 'diff4' },
-    { img1: 'same3', img2: 'same3' },
-    { img1: 'diff5', img2: 'diff6' }
 ];
 
 function Step(img1, img2) {
@@ -24,26 +23,57 @@ function StepsController(data) {
     }
 }
 
-const steps = new StepsController(dataset);
-const firstStep = steps.next();
-
 export default function SquaresXPage() {
-    const [currentStep, setCurrentStep] = useState(firstStep);
+    const [steps] = useState(new StepsController(dataset));
+    const [currentStep, setCurrentStep] = useState(null);
+    const [answers, setAnswers] = useState([]);
 
-    const nextStep = () => {
+    useEffect(() => {
+        window.app.type = 'squares';
+        const firstStep = steps.next();
+        setCurrentStep(firstStep);
+    }, []);
+
+    /**
+     * @param answer
+     *      true - a user clicked diff
+     *      false - a user clicked same
+     */
+    const nextStep = (answer) => {
+        const val = [...answers, {
+            ...currentStep.value,
+            isCorrect: currentStep.value.isSame === !answer
+        }];
+
+        setAnswers(val);
         setCurrentStep(steps.next());
+
+        window.app.squares = val;
     };
 
     console.log('currentStep', currentStep);
+    console.log('answer', answers);
+
+    if (!currentStep) {
+        return null;
+    }
+
+    if (!currentStep.done) {
+        return (
+            <div>
+                <Typography variant="h4">Шаг #</Typography>
+
+                <Square
+                    step={currentStep}
+                    onAnswer={nextStep}
+                />
+            </div>
+        );
+    }
 
     return (
-        <div>
-            <Typography variant="h4">Шаг #</Typography>
-
-            <Square
-                step={currentStep}
-                onAnswer={nextStep}
-            />
-        </div>
-    );
+        <>
+            <Redirect to="/finish" />
+        </>
+    )
 }

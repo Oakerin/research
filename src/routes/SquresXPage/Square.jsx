@@ -1,10 +1,13 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
 import Images from './Images';
 import Blinker from './Blinker';
+import Box from '@material-ui/core/Box';
 
 function Square({ step, onAnswer }) {
+    const [isShowQuestion, setIsShowQuestion] = useState(false);
+
     useEffect(() => {
         const callback = (event) => {
             const keyCode = event.code;
@@ -22,15 +25,26 @@ function Square({ step, onAnswer }) {
         };
 
         window.addEventListener('keypress', callback);
+
+        if (!isShowQuestion) {
+            window.removeEventListener('keypress', callback);
+        }
+
         return () => window.removeEventListener('keypress', callback);
-    }, []);
+    }, [isShowQuestion]);
 
     const handleSame = () => {
-        onAnswer();
+        onAnswer(false);
+        setIsShowQuestion(false);
     };
 
     const handleDiff = () => {
-        onAnswer();
+        onAnswer(true);
+        setIsShowQuestion(false);
+    };
+
+    const handleAnimationEnd = () => {
+        setIsShowQuestion(true);
     };
 
     return (
@@ -38,27 +52,35 @@ function Square({ step, onAnswer }) {
             <Images
                 img1={step.value.img1}
                 img2={step.value.img2}
+                isShowSecond={isShowQuestion}
             />
 
-            <div>
-                <Typography>Отличаются?</Typography>
-                <Button
-                    color="primary"
-                    variant="contained"
-                    onClick={handleSame}
-                >
-                    Нет [Q]
-                </Button>
-                <Button
-                    color="primary"
-                    variant="contained"
-                    onClick={handleDiff}
-                >
-                    Да [E]
-                </Button>
-            </div>
+            {isShowQuestion && (
+                <Box position="absolute">
+                    <Typography>Отличаются?</Typography>
+                    <Button
+                        color="primary"
+                        variant="contained"
+                        onClick={handleSame}
+                    >
+                        Нет [Q]
+                    </Button>
+                    <Box component="span" padding="0 8px" />
+                    <Button
+                        color="primary"
+                        variant="contained"
+                        onClick={handleDiff}
+                    >
+                        Да [E]
+                    </Button>
+                </Box>
+            )}
 
-            <Blinker step={step} />
+            <Blinker
+                step={step}
+                onAnimationStart={console.log}
+                onAnimationEnd={handleAnimationEnd}
+            />
         </div>
     );
 }
