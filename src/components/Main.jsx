@@ -7,6 +7,8 @@ import { DynamicPage } from '../routes/DynamicPage';
 import { FinishPage } from '../routes/FinishPage';
 import { StaticPage } from '../routes/StaticPage';
 import SquarePage from '../routes/SquaresPage';
+import SquaresXPage from '../routes/SquaresXPage';
+
 
 const useStyles = makeStyles({
     root: {
@@ -32,7 +34,8 @@ export function Main() {
                     <MainPage />
                 </Route>
                 <Route path="/squares">
-                    <SquarePage />
+                    {/*<SquarePage />*/}
+                    <SquaresXPage />
                 </Route>
                 <Route path="/static">
                     <StaticPage />
