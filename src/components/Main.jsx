@@ -7,7 +7,7 @@ import { DynamicPage } from '../routes/DynamicPage';
 import { FinishPage } from '../routes/FinishPage';
 import { StaticPage } from '../routes/StaticPage';
 import SquarePage from '../routes/SquaresPage';
-import SquaresXPage from '../routes/SquaresXPage';
+import SquaresXPage from '../routes/SquresXPage/SquaresXPage';
 
 
 const useStyles = makeStyles({
