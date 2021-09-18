@@ -43,7 +43,7 @@ function Square({ step, onAnswer }) {
         setIsShowQuestion(false);
     };
 
-    const handleAnimationEnd = () => {
+    const handleAnimationMiddle = () => {
         setIsShowQuestion(true);
     };
 
@@ -79,7 +79,8 @@ function Square({ step, onAnswer }) {
             <Blinker
                 step={step}
                 onAnimationStart={console.log}
-                onAnimationEnd={handleAnimationEnd}
+                onAnimationEnd={console.log}
+                onAnimationMiddle={handleAnimationMiddle}
             />
         </div>
     );
