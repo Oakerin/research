@@ -1,6 +1,8 @@
 export function requestFullscreen() {
     if (!document.fullscreenElement) {
-        document.documentElement.requestFullscreen();
+        if (document.documentElement) {
+            document.documentElement.requestFullscreen();
+        }
     }
 }
 
