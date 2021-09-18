@@ -41,6 +41,8 @@ export default function SquaresXPage() {
             isCorrect: currentStep.value.isSame === !answer
         }];
 
+        console.log(val[val.length-1]);
+
         setAnswers(val);
         setCurrentStep(steps.next());
 
