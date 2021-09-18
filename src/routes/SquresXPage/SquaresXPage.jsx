@@ -42,11 +42,10 @@ export default function SquaresXPage() {
         }];
 
         console.log(val[val.length-1]);
+        window.app.squares = val;
 
         setAnswers(val);
         setCurrentStep(steps.next());
-
-        window.app.squares = val;
     };
 
     if (!currentStep) {
