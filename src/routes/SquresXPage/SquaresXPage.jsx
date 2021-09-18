@@ -2,11 +2,7 @@ import React, { useEffect, useState } from 'react';
 import Typography from '@material-ui/core/Typography';
 import Square from './Square';
 import { Redirect } from 'react-router-dom';
-
-const dataset = [
-    { img1: 'same2', img2: 'same2' },
-    { img1: 'diff3', img2: 'diff4' },
-];
+import { dataset } from './dataset';
 
 function Step(img1, img2) {
     this.img1 = img1;
@@ -51,9 +47,6 @@ export default function SquaresXPage() {
         window.app.squares = val;
     };
 
-    console.log('currentStep', currentStep);
-    console.log('answer', answers);
-
     if (!currentStep) {
         return null;
     }
@@ -61,7 +54,7 @@ export default function SquaresXPage() {
     if (!currentStep.done) {
         return (
             <div>
-                <Typography variant="h4">Шаг #</Typography>
+                <Typography variant="h4">Шаг: {answers.length+1} / {dataset.length}</Typography>
 
                 <Square
                     step={currentStep}
