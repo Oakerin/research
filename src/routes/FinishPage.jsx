@@ -39,6 +39,11 @@ export function FinishPage() {
 
     return (
         <div className={classes.root}>
+            {window.app.type === 'squares' && (
+                <Typography variant="h2">
+                    {window.app.squares.reduce((acc, val) => { return acc + val.isCorrect }, 0)} из {window.app.squares.length} ответов - правильные!
+                </Typography>
+            )}
             <Typography variant="h1" gutterBottom>
                 Отличный результат! <br />
                 Спасибо за участие.
